@@ -4,7 +4,7 @@ title: "Structured Streaming教程(3) —— 与Kafka的集成"
 date: 2017-10-27 19:30:00
 categories: 大数据 Spark 实时计算
 tags: 大数据 Spark 实时计算
-author: Sun-Ming
+author: Fainer
 ---
 
 * content

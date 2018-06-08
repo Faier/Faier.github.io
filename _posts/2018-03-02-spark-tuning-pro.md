@@ -4,7 +4,7 @@ title: "Spark性能优化指南——高级篇"
 date: 2018-03-02 21:45:00
 categories: 大数据 Spark 性能优化 performance
 tags: 大数据 Spark 性能优化 performance
-author: Sun-Ming
+author: Fainer
 ---
 
 * content
@@ -36,7 +36,7 @@ author: Sun-Ming
 
 下图就是一个很清晰的例子：hello这个key，在三个节点上对应了总共7条数据，这些数据都会被拉取到同一个task中进行处理；而world和you这两个key分别才对应1条数据，所以另外两个task只要分别处理1条数据即可。此时第一个task的运行时间可能是另外两个task的7倍，而整个stage的运行速度也由运行最慢的那个task所决定。
 
-![skwed-mech](https://sun-ming.github.io/assets/images/sparktuning/skwed-mech.jpg)
+![skwed-mech](https://Fainer.github.io/assets/images/sparktuning/skwed-mech.jpg)
 
 ## 如何定位导致数据倾斜的代码
 
@@ -49,7 +49,7 @@ author: Sun-Ming
 如果是用yarn-client模式提交，那么本地是直接可以看到log的，可以在log中找到当前运行到了第几个stage；如果是用yarn-cluster模式提交，则可以通过Spark Web UI来查看当前运行到了第几个stage。此外，无论是使用yarn-client模式还是yarn-cluster模式，我们都可以在Spark Web UI上深入看一下当前这个stage各个task分配的数据量，从而进一步确定是不是task分配的数据不均匀导致了数据倾斜。
 
 比如下图中，倒数第三列显示了每个task的运行时间。明显可以看到，有的task运行特别快，只需要几秒钟就可以运行完；而有的task运行特别慢，需要几分钟才能运行完，此时单从运行时间上看就已经能够确定发生数据倾斜了。此外，倒数第一列显示了每个task处理的数据量，明显可以看到，运行时间特别短的task只需要处理几百KB的数据即可，而运行时间特别长的task需要处理几千KB的数据，处理的数据量差了10倍。此时更加能够确定是发生了数据倾斜。
-![shuffle-skwed-web-ui-demo](https://sun-ming.github.io/assets/images/sparktuning/shuffle-skwed-web-ui-demo.jpg)
+![shuffle-skwed-web-ui-demo](https://Fainer.github.io/assets/images/sparktuning/shuffle-skwed-web-ui-demo.jpg)
 知道数据倾斜发生在哪一个stage之后，接着我们就需要根据stage划分原理，推算出来发生倾斜的那个stage对应代码中的哪一部分，这部分代码中肯定会有一个shuffle类算子。精准推算stage与代码的对应关系，需要对Spark的源码有深入的理解，这里我们可以介绍一个相对简单实用的推算方法：只要看到Spark代码中出现了一个shuffle类算子或者是Spark SQL的SQL语句中出现了会导致shuffle的语句（比如group by语句），那么就可以判定，以那个地方为界限划分出了前后两个stage。
 
 这里我们就以Spark最基础的入门程序——单词计数来举例，如何用最简单的方法大致推算出一个stage对应的代码。如下示例，在整个代码中，只有一个reduceByKey是会发生shuffle的算子，因此就可以认为，以这个算子为界限，会划分出前后两个stage。
@@ -138,7 +138,7 @@ sampledWordCounts.foreach(println(_))
 **方案缺点**：只是缓解了数据倾斜而已，没有彻底根除问题，根据实践经验来看，其效果有限。
 
 **方案实践经验**：该方案通常无法彻底解决数据倾斜，因为如果出现一些极端情况，比如某个key对应的数据量有100万，那么无论你的task数量增加到多少，这个对应着100万数据的key肯定还是会分配到一个task中去处理，因此注定还是会发生数据倾斜的。所以这种方案只能说是在发现数据倾斜时尝试使用的第一种手段，尝试去用嘴简单的方法缓解数据倾斜而已，或者是和其他方案结合起来使用。
-![shuffle-skwed-add-partition](https://sun-ming.github.io/assets/images/sparktuning/shuffle-skwed-add-partition.jpg)
+![shuffle-skwed-add-partition](https://Fainer.github.io/assets/images/sparktuning/shuffle-skwed-add-partition.jpg)
 
 ### 解决方案四：两阶段聚合（局部聚合+全局聚合）
 
@@ -152,7 +152,7 @@ sampledWordCounts.foreach(println(_))
 
 **方案缺点**：仅仅适用于聚合类的shuffle操作，适用范围相对较窄。如果是join类的shuffle操作，还得用其他的解决方案。
 
-![shuffle-skwed-two-phase-aggr](https://sun-ming.github.io/assets/images/sparktuning/shuffle-skwed-two-phase-aggr.jpg)
+![shuffle-skwed-two-phase-aggr](https://Fainer.github.io/assets/images/sparktuning/shuffle-skwed-two-phase-aggr.jpg)
 ```
 // 第一步，给RDD中的每个key都打上一个随机前缀。
 JavaPairRDD<String, Long> randomPrefixRdd = rdd.mapToPair(
@@ -211,7 +211,7 @@ JavaPairRDD<Long, Long> globalAggrRdd = removedRandomPrefixRdd.reduceByKey(
 **方案优点**：对join操作导致的数据倾斜，效果非常好，因为根本就不会发生shuffle，也就根本不会发生数据倾斜。
 
 **方案缺点**：适用场景较少，因为这个方案只适用于一个大表和一个小表的情况。毕竟我们需要将小表进行广播，此时会比较消耗内存资源，driver和每个Executor内存中都会驻留一份小RDD的全量数据。如果我们广播出去的RDD数据比较大，比如10G以上，那么就可能发生内存溢出了。因此并不适合两个都是大表的情况。
-![shuffle-skwed-map-join](https://sun-ming.github.io/assets/images/sparktuning/shuffle-skwed-map-join.jpg)
+![shuffle-skwed-map-join](https://Fainer.github.io/assets/images/sparktuning/shuffle-skwed-map-join.jpg)
 ```
 // 首先将数据量比较小的RDD的数据，collect到Driver中来。
 List<Tuple2<Long, Row>> rdd1Data = rdd1.collect()
@@ -266,7 +266,7 @@ JavaPairRDD<String, Tuple2<String, Row>> joinedRdd = rdd2.mapToPair(
 **方案优点**：对于join导致的数据倾斜，如果只是某几个key导致了倾斜，采用该方式可以用最有效的方式打散key进行join。而且只需要针对少数倾斜key对应的数据进行扩容n倍，不需要对全量数据进行扩容。避免了占用过多内存。
 
 **方案缺点**：如果导致倾斜的key特别多的话，比如成千上万个key都导致数据倾斜，那么这种方式也不适合。
-![shuffle-skwed-sample-expand](https://sun-ming.github.io/assets/images/sparktuning/shuffle-skwed-sample-expand.jpg)
+![shuffle-skwed-sample-expand](https://Fainer.github.io/assets/images/sparktuning/shuffle-skwed-sample-expand.jpg)
 ```
 // 首先从包含了少数几个导致数据倾斜key的rdd1中，采样10%的样本数据。
 JavaPairRDD<Long, String> sampledRDD = rdd1.sample(false, 0.1);
@@ -463,7 +463,7 @@ JavaPairRDD<String, Tuple2<String, Row>> joinedRDD = mappedRDD.join(expandedRDD)
 
 shuffle read的拉取过程是一边拉取一边进行聚合的。每个shuffle read task都会有一个自己的buffer缓冲，每次都只能拉取与buffer缓冲相同大小的数据，然后通过内存中的一个Map进行聚合等操作。聚合完一批数据后，再拉取下一批数据，并放到buffer缓冲中进行聚合操作。以此类推，直到最后将所有数据到拉取完，并得到最终的结果。
 
-![hash-shuffle-common](https://sun-ming.github.io/assets/images/sparktuning/hash-shuffle-common.jpg)
+![hash-shuffle-common](https://Fainer.github.io/assets/images/sparktuning/hash-shuffle-common.jpg)
 
 ### 优化后的HashShuffleManager
 
@@ -475,7 +475,7 @@ shuffle read的拉取过程是一边拉取一边进行聚合的。每个shuffle 
 
 假设第二个stage有100个task，第一个stage有50个task，总共还是有10个Executor，每个Executor执行5个task。那么原本使用未经优化的HashShuffleManager时，每个Executor会产生500个磁盘文件，所有Executor会产生5000个磁盘文件的。但是此时经过优化之后，每个Executor创建的磁盘文件的数量的计算公式为：CPU core的数量 * 下一个stage的task数量。也就是说，每个Executor此时只会创建100个磁盘文件，所有Executor只会创建1000个磁盘文件。
 hash-shuffle-consolidate.jpg
-![hash-shuffle-consolidate](https://sun-ming.github.io/assets/images/sparktuning/hash-shuffle-consolidate.jpg)
+![hash-shuffle-consolidate](https://Fainer.github.io/assets/images/sparktuning/hash-shuffle-consolidate.jpg)
 ## SortShuffleManager运行原理
 
 SortShuffleManager的运行机制主要分成两种，一种是普通运行机制，另一种是bypass运行机制。当shuffle read task的数量小于等于spark.shuffle.sort.bypassMergeThreshold参数的值时（默认为200），就会启用bypass机制。
@@ -490,7 +490,7 @@ SortShuffleManager的运行机制主要分成两种，一种是普通运行机�
 
 SortShuffleManager由于有一个磁盘文件merge的过程，因此大大减少了文件数量。比如第一个stage有50个task，总共有10个Executor，每个Executor执行5个task，而第二个stage有100个task。由于每个task最终只有一个磁盘文件，因此此时每个Executor上只有5个磁盘文件，所有Executor只有50个磁盘文件。
 sort-shuffle-common.jpg
-![sort-shuffle-common](https://sun-ming.github.io/assets/images/sparktuning/sort-shuffle-common.jpg)
+![sort-shuffle-common](https://Fainer.github.io/assets/images/sparktuning/sort-shuffle-common.jpg)
 ### bypass运行机制
 
 下图说明了bypass SortShuffleManager的原理。bypass运行机制的触发条件如下：
@@ -504,7 +504,7 @@ sort-shuffle-common.jpg
 
 而该机制与普通SortShuffleManager运行机制的不同在于：第一，磁盘写机制不同；第二，不会进行排序。也就是说，启用该机制的最大好处在于，shuffle write过程中，不需要进行数据的排序操作，也就节省掉了这部分的性能开销。
 sort-shuffle-bypass.jpg
-![sort-shuffle-bypass](https://sun-ming.github.io/assets/images/sparktuning/sort-shuffle-bypass.jpg)
+![sort-shuffle-bypass](https://Fainer.github.io/assets/images/sparktuning/sort-shuffle-bypass.jpg)
 
 ## shuffle相关参数调优
 

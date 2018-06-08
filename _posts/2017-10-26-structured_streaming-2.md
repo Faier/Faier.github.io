@@ -4,7 +4,7 @@ title: "Structured Streaming教程(2) —— 常用输入与输出"
 date: 2017-10-26 19:21:00
 categories: 大数据 Spark 实时计算
 tags: 大数据 Spark 实时计算
-author: Sun-Ming
+author: Fainer
 ---
 
 * content

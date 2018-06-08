@@ -11,7 +11,7 @@ type: page
 
 ## 关于我
 
-<!-- <iframe src="https://githubbadge.appspot.com/sun-ming?s=1" style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameBorder="0"></iframe> -->
+<!-- <iframe src="https://githubbadge.appspot.com/Fainer?s=1" style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameBorder="0"></iframe> -->
 
 就职于某神秘的通信类国企大数据分析事业部，Java大数据开发工程师，江湖人称孙老师。
 
@@ -44,22 +44,22 @@ type: page
 
 ## 联系我
 
-* GitHub：[sun-ming](https://github.com/sun-ming)
+* GitHub：[Fainer](https://github.com/Fainer)
 * email：416219573@qq.com
-* [Weibo](http://weibo.com/sun-ming)
-* [知乎](https://www.zhihu.com/people/sun-ming)
-* [Facebook](https://www.facebook.com/sun-ming)
-* [Twitter](https://twitter.com/sun-ming)
-* [豆瓣](https://www.douban.com/people/sun-ming/)
-* [豆瓣音乐人-孙铭的小站](https://site.douban.com/sun-ming/)
+* [Weibo](http://weibo.com/Fainer)
+* [知乎](https://www.zhihu.com/people/Fainer)
+* [Facebook](https://www.facebook.com/Fainer)
+* [Twitter](https://twitter.com/Fainer)
+* [豆瓣](https://www.douban.com/people/Fainer/)
+* [豆瓣音乐人-孙铭的小站](https://site.douban.com/Fainer/)
 
 ## 关于本站
 
-**若您想使用这个 jekyll 博客主题，请访问：[https://github.com/sun-ming/sun-ming.github.io](https://github.com/sun-ming/sun-ming.github.io)**
+**若您想使用这个 jekyll 博客主题，请访问：[https://github.com/Fainer/Fainer.github.io](https://github.com/Fainer/Fainer.github.io)**
 
 ~欢迎使用~
 
-欢迎大家提一些对本站主题的建议，可以直接在下面留言或者新建一个 [Issue](https://github.com/sun-ming/sun-ming.github.io/issues)。
+欢迎大家提一些对本站主题的建议，可以直接在下面留言或者新建一个 [Issue](https://github.com/Fainer/Fainer.github.io/issues)。
 
 ### Update Log
 

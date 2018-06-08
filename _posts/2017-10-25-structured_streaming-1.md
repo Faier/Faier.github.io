@@ -4,7 +4,7 @@ title: "Structured Streaming教程(1) —— 基本概念与使用"
 date: 2017-10-25 18:30:00
 categories: 大数据 Spark 实时计算
 tags: 大数据 Spark 实时计算
-author: Sun-Ming
+author: Fainer
 ---
 
 * content
@@ -26,7 +26,7 @@ author: Sun-Ming
 
 可以看到想要去做一些类似Group by的操作，Streaming是非常不便的。Structured Streaming则完美的解决了这个问题。
 
-![structured-streaming-stream-as-a-table](https://raw.githubusercontent.com/sun-ming/image-repository/master/image_blog/structured_streaming_blog/structured-streaming-stream-as-a-table.png)
+![structured-streaming-stream-as-a-table](https://raw.githubusercontent.com/Fainer/image-repository/master/image_blog/structured_streaming_blog/structured-streaming-stream-as-a-table.png)
 
 在Structured Streaming中，把源源不断到来的数据通过固定的模式“追加”或者“更新”到了上面无下限的DataFrame中。剩余的工作则跟普通的DataFrame一样，可以去map、filter，也可以去groupby().count()。甚至还可以把流处理的dataframe跟其他的“静态”DataFrame进行join。另外，还提供了基于window时间的流式处理。总之，Structured Streaming提供了快速、可扩展、高可用、高可靠的流式处理。
 
@@ -82,7 +82,7 @@ object WordCount {
 }
 ```
 效果就是在控制台输入`nc -lk 9999`，然后输入一大堆的字符，控制台就输出了对应的结果：
-![o_Jietu20180601-172555](https://raw.githubusercontent.com/sun-ming/image-repository/master/image_blog/structured_streaming_blog/o_Jietu20180601-172555.jpg)
+![o_Jietu20180601-172555](https://raw.githubusercontent.com/Fainer/image-repository/master/image_blog/structured_streaming_blog/o_Jietu20180601-172555.jpg)
 然后来详细看一下代码：
 ```
 val spark = SparkSession
@@ -124,7 +124,7 @@ query.awaitTermination()
 通过QueryStreaming的对象，调用awaitTermination阻塞主线程。程序就可以不断循环调用了。
 
 观察一下Spark UI，可以发现程序稳定的在运行~
-![o_Jietu20180601-172409](https://raw.githubusercontent.com/sun-ming/image-repository/master/image_blog/structured_streaming_blog/o_Jietu20180601-172409.jpg)
+![o_Jietu20180601-172409](https://raw.githubusercontent.com/Fainer/image-repository/master/image_blog/structured_streaming_blog/o_Jietu20180601-172409.jpg)
 ## 总结
 
 这就是一个最基本的wordcount的例子，想象一下，如果没有Structured Streaming，想要统计全局的wordcount，还是很费劲的（即便使用streaming的state，其实也不是那么好用的）。
