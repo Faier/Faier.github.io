@@ -55,7 +55,7 @@ type: page
 
 ## 关于本站
 
-**若您想使用这个 jekyll 博客主题，请访问：[https://github.com/Fainer/Fainer.github.io](https://github.com/Fainer/Fainer.github.io)**
+**若您想使用这个 jekyll 博客主题，请访问：[https://github.com/Faier/Faier.github.io](https://github.com/Faier/Faier.github.io)**
 
 ~欢迎使用~
 
