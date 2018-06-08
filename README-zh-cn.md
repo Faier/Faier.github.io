@@ -2,7 +2,7 @@
 
 随着 jekyll 的版本升级，同时我也想重构我的旧版博客主题，因此在这个月对博客进行了重构加改版，这个仓库存放我的新博客，并且我也会一直使用这个主题。目前基本改版完成，后续可能还会有些细节上的修补。
 
-**博客访问地址：[https://sun-ming.github.io/](https://sun-ming.github.io/)**。若您喜欢这个新的博客主题，请给我个star以示鼓励吧，欢迎大家使用。
+**博客访问地址：[https://Fainer.github.io/](https://Fainer.github.io/)**。若您喜欢这个新的博客主题，请给我个star以示鼓励吧，欢迎大家使用。
 
 ## 目录
 
@@ -42,10 +42,10 @@
 先上预览图：
 
 主页
-![index](https://sun-ming.github.io/assets/images/readme/index.jpg)
+![index](https://Fainer.github.io/assets/images/readme/index.jpg)
 
 文章页
-![post](https://sun-ming.github.io/assets/images/readme/page.jpg)
+![post](https://Fainer.github.io/assets/images/readme/page.jpg)
 
 ## 各部分详情
 
@@ -101,7 +101,7 @@ disqus_shortname: xxx
 
 ### 灯泡效果
 
-![light](https://sun-ming.github.io/assets/images/readme/light.jpg)
+![light](https://Fainer.github.io/assets/images/readme/light.jpg)
 
 可以看到导航按钮高亮时，下面的阴影效果，我把这个称为灯泡效果。
 
@@ -109,12 +109,12 @@ disqus_shortname: xxx
 
 完美适配移动端。
 
-![mobile](https://sun-ming.github.io/assets/images/readme/phone.jpg)
+![mobile](https://Fainer.github.io/assets/images/readme/phone.jpg)
 
 ### Footer
 
-**欢迎使用这个主题，使用时请保留 footer 上的模板主题来源。** Theme designed by [Sun-Ming](https://github.com/sun-ming).
-![footer](https://sun-ming.github.io/assets/images/readme/footer.jpg)
+**欢迎使用这个主题，使用时请保留 footer 上的模板主题来源。** Theme designed by [Fainer](https://github.com/Fainer).
+![footer](https://Fainer.github.io/assets/images/readme/footer.jpg)
 
 ### 统计
 
@@ -171,10 +171,10 @@ gem install jekyll
 
 ```yml
 # Site settings
-title: Sun-Ming
+title: Fainer
 brief-intro: BigData/JavaWeb Advanced Dev Engineer
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://sun-ming.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://Fainer.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 ```
 
 #### 链接信息
@@ -183,14 +183,14 @@ url: "https://sun-ming.github.io" # the base hostname & protocol for your site, 
 
 ```yml
 # other links
-twitter_username: sun-ming
-facebook_username: sun-ming
-github_username: sun-ming
+twitter_username: Fainer
+facebook_username: Fainer
+github_username: Fainer
 email: 416219573@qq.com
-weibo_username: sun-ming
-zhihu_username: sun-ming
-linkedIn_username: sun-ming
-dribbble_username: sun-ming
+weibo_username: Fainer
+zhihu_username: Fainer
+linkedIn_username: Fainer
+dribbble_username: Fainer
 
 description_footer: 本站记录我软件开发的旅途风景！
 ```
@@ -205,8 +205,8 @@ description_footer: 本站记录我软件开发的旅途风景！
 # comments
 # two ways to comment, only choose one, and use your own short name
 # 两种评论插件，选一个就好了，使用自己的 short_name
-duoshuo_shortname: #sun-ming
-disqus_shortname: #sun-ming
+duoshuo_shortname: #Fainer
+disqus_shortname: #Fainer
 ```
 
 运行成功后，可以在 disqus 或 多说 的后台管理页看到相关信息。
@@ -239,7 +239,7 @@ title:  "对这个 jekyll 博客主题的改版和重构"
 date:   2016-03-12 11:40:18 +0800
 categories: jekyll
 tags: jekyll 端口 markdown Foxit RubyGems HTML CSS
-author: Sun-Ming
+author: Fainer
 mathjax: true
 ---
 ```
@@ -290,7 +290,7 @@ Configuration file: E:/GitWorkSpace/blog/_config.yml
 
 在本地访问 localhost:4000 即可看到博客主页。
 
-若安装了 Foxit 福昕pdf阅读器可能会占用4000端口，关闭 Foxit服务 或切换 jekyll 端口即可解决。详情见文章：[对这个 jekyll 博客主题的改版和重构](http://sun-ming.github.io/2016/03/12/jekyll-theme-version-2.0/)
+若安装了 Foxit 福昕pdf阅读器可能会占用4000端口，关闭 Foxit服务 或切换 jekyll 端口即可解决。详情见文章：[对这个 jekyll 博客主题的改版和重构](http://Fainer.github.io/2016/03/12/jekyll-theme-version-2.0/)
 
 若正在使用全局代理，可能会报错502，关闭全局代理即可。
 
@@ -313,7 +313,7 @@ Configuration file: E:/GitWorkSpace/blog/_config.yml
 
 |                                 微信支付                                    |                                   支付宝                                    |
 |:---------------------------------------------------------------------------:|:---------------------------------------------------------------------------:|
-| ![wechat](https://sun-ming.github.io/assets/images/readme/WechatPay.jpg)    | ![alipay](https://sun-ming.github.io/assets/images/readme/Alipay.jpg)       |
+| ![wechat](https://Fainer.github.io/assets/images/readme/WechatPay.jpg)    | ![alipay](https://Fainer.github.io/assets/images/readme/Alipay.jpg)       |
 
 
 感谢捐赠的小伙伴！！！
@@ -396,4 +396,4 @@ Configuration file: E:/GitWorkSpace/blog/_config.yml
 
 ## License
 
-[MIT License](https://github.com/sun-ming/sun-ming.github.io/blob/master/LICENSE)
+[MIT License](https://github.com/Fainer/Fainer.github.io/blob/master/LICENSE)

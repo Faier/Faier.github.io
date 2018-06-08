@@ -1,10 +1,10 @@
 ﻿# About this Cool Concise Jekyll Blog Theme 🤘🤘🤘
 
-**[中文版 Chinese README 请点击这里 🇨🇳](https://github.com/sun-ming/sun-ming.github.io/blob/master/README-zh-cn.md)**
+**[中文版 Chinese README 请点击这里 🇨🇳](https://github.com/Fainer/Fainer.github.io/blob/master/README-zh-cn.md)**
 
 With the escalation of jekyll version, but I also want to reconstruct my older blog theme, so I did reconstruction and added some features recently. My new blog theme will still be stored in this repository. I will also use this theme in the future. Now I have done basically, then I will focus on issues that users opend to make theme better.
 
-**My Blog Url: [https://sun-ming.github.io/](https://sun-ming.github.io/)**. If you like this theme, you can give me a star to encourage me. Welcome everyone to use it.
+**My Blog Url: [https://Fainer.github.io/](https://Fainer.github.io/)**. If you like this theme, you can give me a star to encourage me. Welcome everyone to use it.
 
 ## Content
 
@@ -44,10 +44,10 @@ With the escalation of jekyll version, but I also want to reconstruct my older b
 First of all, let's see previews.
 
 Index Page
-![index](https://sun-ming.github.io/assets/images/readme/index.jpg)
+![index](https://Fainer.github.io/assets/images/readme/index.jpg)
 
 Post Page
-![post](https://sun-ming.github.io/assets/images/readme/page.jpg)
+![post](https://Fainer.github.io/assets/images/readme/page.jpg)
 
 ## Page Details
 
@@ -104,7 +104,7 @@ More info to see [syntax-highlighter-changed](https://jekyllrb.com/docs/upgradin
 
 ### Light Shadow
 
-![light](https://sun-ming.github.io/assets/images/readme/light.jpg)
+![light](https://Fainer.github.io/assets/images/readme/light.jpg)
 
 You can see the white shadow on the current item in the navbar. I call this light shadow.
 
@@ -112,13 +112,13 @@ You can see the white shadow on the current item in the navbar. I call this ligh
 
 Of course, I have done a very good mobile adaptation.
 
-![mobile](https://sun-ming.github.io/assets/images/readme/phone.jpg)
+![mobile](https://Fainer.github.io/assets/images/readme/phone.jpg)
 
 ### Footer
 
-**Welcome to use this blog theme, but please keep the theme author info at footer.** Theme designed by [Sun-Ming](https://github.com/sun-ming).
+**Welcome to use this blog theme, but please keep the theme author info at footer.** Theme designed by [Fainer](https://github.com/Fainer).
 
-![footer](https://sun-ming.github.io/assets/images/readme/footer.jpg)
+![footer](https://Fainer.github.io/assets/images/readme/footer.jpg)
 
 ### Statistical Analysis
 
@@ -171,10 +171,10 @@ Shows at site header part.
 
 ```yml
 # Site settings
-title: Sun-Ming
+title: Fainer
 brief-intro: BigData/JavaWeb Advanced Dev Engineer
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://sun-ming.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://Fainer.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 ```
 
 #### Link info
@@ -183,14 +183,14 @@ Mainly shows at the footer of the site.
 
 ```yml
 # other links
-twitter_username: sun-ming
-facebook_username: sun-ming
-github_username: sun-ming
+twitter_username: Fainer
+facebook_username: Fainer
+github_username: Fainer
 email: 416219573@qq.com
-weibo_username: sun-ming
-zhihu_username: sun-ming
-linkedIn_username: sun-ming
-dribbble_username: sun-ming
+weibo_username: Fainer
+zhihu_username: Fainer
+linkedIn_username: Fainer
+dribbble_username: Fainer
 
 description_footer: 本站记录我软件开发的旅途风景！
 ```
@@ -204,8 +204,8 @@ Visit https://disqus.com/ or http://duoshuo.com/. And follow the prompts at the 
 ```yml
 # comments
 # two ways to comment, only choose one, and use your own short name
-duoshuo_shortname: #sun-ming
-disqus_shortname: #sun-ming
+duoshuo_shortname: #Fainer
+disqus_shortname: #Fainer
 ```
 
 When you done, you can also see the comments info at disqus or duoshuo admin console.
@@ -240,7 +240,7 @@ title:  "对这个 jekyll 博客主题的改版和重构"
 date:   2016-03-12 11:40:18 +0800
 categories: jekyll
 tags: jekyll 端口 markdown Foxit RubyGems HTML CSS
-author: Sun-Ming
+author: Fainer
 mathjax: true
 ---
 ```
@@ -301,7 +301,7 @@ You can also donate me for a coffee, and I'll do better. Thanks.
 
 |                                 Wechat Pay                                  |                                   Alipay                                    |
 |:---------------------------------------------------------------------------:|:---------------------------------------------------------------------------:|
-| ![wechat](https://sun-ming.github.io/assets/images/readme/WechatPay.jpg)    | ![alipay](https://sun-ming.github.io/assets/images/readme/Alipay.jpg)       |
+| ![wechat](https://Fainer.github.io/assets/images/readme/WechatPay.jpg)    | ![alipay](https://Fainer.github.io/assets/images/readme/Alipay.jpg)       |
 
 Thanks these friends!!!
 
@@ -384,4 +384,4 @@ Thanks these friends!!!
 
 ## License
 
-[MIT License](https://github.com/sun-ming/sun-ming.github.io/blob/master/LICENSE)
+[MIT License](https://github.com/Fainer/Fainer.github.io/blob/master/LICENSE)
