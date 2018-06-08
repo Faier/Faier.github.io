@@ -45,13 +45,13 @@ type: page
 ## 联系我
 
 * GitHub：[Fainer](https://github.com/Fainer)
-* email：416219573@qq.com
+* email：1308364019@qq.com
 * [Weibo](http://weibo.com/Fainer)
 * [知乎](https://www.zhihu.com/people/Fainer)
 * [Facebook](https://www.facebook.com/Fainer)
 * [Twitter](https://twitter.com/Fainer)
 * [豆瓣](https://www.douban.com/people/Fainer/)
-* [豆瓣音乐人-孙铭的小站](https://site.douban.com/Fainer/)
+* [豆瓣音乐人-王江的小站](https://site.douban.com/Fainer/)
 
 ## 关于本站
 
