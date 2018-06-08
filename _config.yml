@@ -13,30 +13,30 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Sun-Ming
+title: Fainer
 brief-intro: BigData/JavaWeb Advanced Dev Engineer
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://sun-ming.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://Fainer.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 permalink: /:year/:month/:day/:title/
 
 # other links
-twitter_username: sun-ming
-facebook_username: sun-ming
-github_username: sun-ming
+twitter_username: Fainer
+facebook_username: Fainer
+github_username: Fainer
 email: 416219573@qq.com
-weibo_username: sun-ming
-zhihu_username: sun-ming
-linkedIn_username: sun-ming
-dribbble_username: sun-ming
+weibo_username: Fainer
+zhihu_username: Fainer
+linkedIn_username: Fainer
+dribbble_username: Fainer
 
 description_footer: 本站记录我软件开发的旅途风景！
 
 # comments
 # two ways to comment, only choose one, and use your own short name
 # 两种评论插件，选一个就好了，使用自己的 short_name
-duoshuo_shortname: #sun-ming
-disqus_shortname: #sun-ming
+duoshuo_shortname: #Fainer
+disqus_shortname: #Fainer
 
 # statistic analysis 统计代码
 # 百度统计 id，将统计代码替换为自己的百度统计id，即
